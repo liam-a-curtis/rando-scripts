@@ -1,0 +1,8 @@
+MAILTO=""
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# cron file I like to use as a template as a reminder for settings
+#
+# m h dom mon dow user	command
+* */2 * * * root /usr/local/sbin/bkup-wp.sh >/dev/null 2>&1
