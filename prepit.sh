@@ -23,5 +23,5 @@ mkdir -p "./resized"
 num=1
 for i in `ls *.jpg`; do mv $i $1-$num.jpg; num=$((num+1)); done
 for i in `ls *.jpg`; do exiftool -all= -overwrite_original -tagsfromfile @ -exif:Orientation  $i; done
-for i in `ls *.jpg`; do convert $i -resize 50% ${i%.*}-m.jpg; echo file copied and resized to 50%; done
-for i in `ls *.jpg`; do convert $i -resize 20% "$DIR"/resized/$i; done
+for i in `ls *.jpg`; do convert $i -resize 50% "$DIR"/resized/${i%.*}-m.jpg; echo $i copied, renamed and resized to 50%; done
+for i in `ls *.jpg`; do convert $i -resize 20% "$DIR"/resized/${i%.*}-s.jpg; echo $i copied, renamed and resized to 20%; done 
